@@ -1,0 +1,501 @@
+/* Genel ayarlar */
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Irish Grover', cursive;
+  background: #370C6B;
+}
+
+.GamePage {
+  width: 100%;
+  max-width: 1532px;
+  height: 695px;
+  position: relative;
+  background: #370C6B;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Yazılar */
+.EternalSecret {
+  position: absolute;
+  top: 33px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #D4AB24;
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  width: 320px;
+  word-wrap: break-word;
+}
+
+.Home {
+  position: absolute;
+  top: 60px;
+  left: 62px;
+  color: #D4AB24;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  width: 108px;
+  word-wrap: break-word;
+}
+
+.DoRu {
+  position: absolute;
+  top: 613px;
+  left: 556px;
+  color: #17F03F;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  width: 156px;
+  height: 31px;
+  word-wrap: break-word;
+}
+
+.MavTakimaKatil {
+  position: absolute;
+  top: 558px;
+  left: 1053px;
+  color: #1970E2;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  width: 144px;
+  height: 48px;
+  word-wrap: break-word;
+}
+
+.Pas {
+  position: absolute;
+  top: 613px;
+  left: 683px;
+  color: #F8EF02;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  width: 156px;
+  height: 31px;
+  word-wrap: break-word;
+}
+
+.Faul {
+  position: absolute;
+  top: 613px;
+  left: 819px;
+  color: #FE0004;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  width: 156px;
+  height: 31px;
+  word-wrap: break-word;
+}
+
+.KirmiziTakimaKatil {
+  position: absolute;
+  top: 553px;
+  left: 330px;
+  color: #FE0004;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  width: 144px;
+  word-wrap: break-word;
+}
+
+/* MAVİ TAKIM */
+.Frame2 {
+  position: absolute;
+  top: 52px;
+  left: 1019px;
+  width: 213px;
+  height: 475px;
+}
+
+.MavTakim {
+  position: relative;
+  width: 213px;
+  height: 475px;
+  background: #1970E2;
+  border-radius: 10px;
+}
+
+.MavTakimTitle {
+  position: absolute;
+  top: 28px;
+  left: 40px;
+  color: white;
+  font-size: 24px;
+  width: 134px;
+  height: 36px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.Mav1Oyuncu {
+  position: absolute;
+  left: 24px;
+  width: 163px;
+  height: 56px;
+  background: #3EBDEB;
+  border-radius: 30px;
+}
+
+.Mav1Oyuncu:nth-child(2) { top: 97px; }
+.Mav1Oyuncu:nth-child(3) { top: 172px; }
+.Mav1Oyuncu:nth-child(4) { top: 247px; }
+.Mav1Oyuncu:nth-child(5) { top: 322px; }
+.Mav1Oyuncu:nth-child(6) { top: 397px; }
+
+.Mavi3Oyuncu {
+  position: absolute;
+  top: 265px;
+  left: 25px;
+  width: 163px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.Mavi5Oyuncu {
+  position: absolute;
+  top: 415px;
+  left: 25px;
+  width: 163px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.Mavi4Oyuncu {
+  position: absolute;
+  top: 336px;
+  left: 25px;
+  width: 163px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.Mavi2Oyuncu {
+  position: absolute;
+  top: 190px;
+  left: 25px;
+  width: 163px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.Mavi1Oyuncu {
+  position: absolute;
+  top: 115px;
+  left: 40px;
+  width: 134px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* KIRMIZI TAKIM */
+.KirmiziTakim {
+  position: absolute;
+  top: 61px;
+  left: 295px;
+  width: 213px;
+  height: 475px;
+  background: #BA1112;
+  border-radius: 10px;
+}
+
+.KirmiziTakimTitle {
+  position: absolute;
+  top: 28px;
+  left: 12px;
+  width: 189px;
+  height: 36px;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.Kirmizi1Oyuncu {
+  position: absolute;
+  left: 24px;
+  width: 163px;
+  height: 56px;
+  background: #FE0004;
+  border-radius: 30px;
+}
+
+.Kirmizi1Oyuncu:nth-of-type(2) { top: 97px; }
+.Kirmizi1Oyuncu:nth-of-type(3) { top: 172px; }
+.Kirmizi1Oyuncu:nth-of-type(4) { top: 247px; }
+.Kirmizi1Oyuncu:nth-of-type(5) { top: 322px; }
+.Kirmizi1Oyuncu:nth-of-type(6) { top: 397px; }
+
+.Kirmizi3Oyuncu {
+  position: absolute;
+  top: 265px;
+  left: 25px;
+  width: 163px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.Kirmizi5Oyuncu {
+  position: absolute;
+  top: 415px;
+  left: 25px;
+  width: 163px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.Kirmizi4Oyuncu {
+  position: absolute;
+  top: 336px;
+  left: 25px;
+  width: 163px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.Kirmizi2Oyuncu {
+  position: absolute;
+  top: 190px;
+  left: 25px;
+  width: 163px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.Kirmizi1OyuncuText {
+  position: absolute;
+  top: 115px;
+  left: 40px;
+  width: 134px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* SORU EKRANI */
+.SoruEkrani {
+  position: absolute;
+  top: 251px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 307px;
+  height: 321px;
+  padding: 33px 8px 12px 8px;
+  background: linear-gradient(270deg, rgba(25, 112, 226, 0.30) 0%, rgba(186, 17, 17, 0.30) 100%);
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.SoruKelimesi {
+  width: 100%;
+  height: 56px;
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.Tabu1, .Tabu2, .Tabu3, .Tabu4, .Tabu5 {
+  width: 100%;
+  height: 29px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* ROOM ID */
+.RoomId {
+  position: absolute;
+  top: 60px;
+  left: 1357px;
+  width: 108px;
+  color: #D4AB24;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.OdaId {
+  position: absolute;
+  top: 103px;
+  left: 1334px;
+  width: 154px;
+  color: #D4AB24;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* Skor tabelası */
+.SkorTabelas {
+  position: absolute;
+  top: 124px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 296px;
+  height: 102px;
+  background: linear-gradient(270deg, #1970E2 0%, #BA1111 100%);
+  border-radius: 30px;
+}
+
+.KrmzTakmSkor {
+  position: absolute;
+  top: 142px;
+  left: calc(50% - 100px);
+  width: 79px;
+  height: 66px;
+}
+
+.Sre {
+  position: absolute;
+  top: 156px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.MaviTakmSkor {
+  position: absolute;
+  top: 142px;
+  left: calc(50% + 80px);
+  width: 79px;
+  height: 66px;
+}
+
+/* Responsive ayarlar */
+@media (max-width: 768px) {
+  .GamePage {
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+  }
+
+  .EternalSecret {
+    font-size: 28px;
+    width: 90%;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+  }
+
+  .Home {
+    left: 10px;
+    top: 20px;
+    font-size: 18px;
+    width: 80px;
+  }
+
+  .DoRu, .Pas, .Faul {
+    font-size: 18px;
+    width: auto;
+    left: auto;
+    top: auto;
+    position: relative;
+    margin: 5px 10px;
+    color: inherit;
+  }
+
+  .MavTakimaKatil, .KirmiziTakimaKatil {
+    font-size: 16px;
+    width: auto;
+    left: auto;
+    top: auto;
+    position: relative;
+    margin: 5px 10px;
+  }
+
+  .Frame2, .KirmiziTakim {
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .MavTakim, .KirmiziTakim {
+    width: 45%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .Mav1Oyuncu, .Kirmizi1Oyuncu {
+    position: relative;
+    width: 90%;
+    height: 50px;
+    margin: 10px auto;
+    border-radius: 30px;
+  }
+
+  .SoruEkrani {
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 40px;
+  }
+
+  .RoomId, .OdaId {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .SkorTabelas {
+    position: relative;
+    width: 90%;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 30px;
+  }
+
+  .KrmzTakmSkor, .MaviTakmSkor, .Sre {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 10px auto;
+    width: 80px;
+    height: 60px;
+  }
+}

@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Irish Grover', cursive;
+  background: #370C6B;
+  color: #D4AB24;
+  overflow: hidden;
+}
+
+.join-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  font-size: 4vw;
+  margin-top: 4vh;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 2vw;
+  margin-top: 1vh;
+}
+
+.card {
+  width: 70%;
+  max-width: 700px;
+  margin: 5vh auto 0;
+  background: linear-gradient(270deg, rgba(25, 112, 226, 0.3), rgba(186, 17, 17, 0.3));
+  border-radius: 30px;
+  padding: 2vh 2vw;
+  text-align: center;
+}
+
+.label {
+  font-size: 2vw;
+  margin-bottom: 2vh;
+}
+
+.input-group {
+  position: relative;
+  margin: 1.5vh 0;
+  height: 50px;
+}
+
+.input-bg {
+  width: 100%;
+  height: 49px;
+  background-color: #370C6B;
+  border-radius: 30px;
+}
+
+.input-text {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  top: 0;
+  left: 0;
+  font-size: 1.8vw;
+  text-align: center;
+  pointer-events: none;
+}
+
+.svg-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.enter-button {
+  position: absolute;
+  bottom: 21vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 272px;
+  height: 85px;
+  border-radius: 90px;
+  background: linear-gradient(90deg, #FE0004 0%, #1970E2 100%);
+  opacity: 0.3;
+}
+
+.enter-text {
+  position: absolute;
+  bottom: 23.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.2vw;
+  text-align: center;
+}
+
+.home {
+  position: absolute;
+  top: 2vh;
+  left: 3vw;
+  font-size: 1.5vw;
+}
+
+/* Responsive font scaling */
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .label {
+    font-size: 20px;
+  }
+
+  .input-text {
+    font-size: 18px;
+  }
+
+  .enter-text {
+    font-size: 20px;
+  }
+
+  .home {
+    font-size: 18px;
+  }
+}
