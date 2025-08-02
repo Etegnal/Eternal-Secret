@@ -9,7 +9,7 @@
 <body>
   <div class="GamePage">
     <div class="EternalSecret">ETERNAL SECRET</div>
-    <div class="Home">HOME</div>
+    <div class="Home" onclick="location.href='MAİN PAGE.html'" style="cursor:pointer;">HOME</div>
     <div class="DoRu">DOĞRU</div>
     <div class="MavTakimaKatil">MAVİ TAKIMA KATIL</div>
     <div class="Pas">PAS</div>
@@ -58,14 +58,95 @@
     <div class="RoomId">ROOM ID</div>
     <div class="OdaId">ID</div>
 
-    <div class="SkorTabelas"></div>
-    <div class="KrmzTakmSkor"></div>
-    <div class="Sre">0:29</div>
-    <div class="MaviTakmSkor"></div>
-    <div class="Home" onclick="location.href='MAİN PAGE.html'" style="cursor:pointer;">
-  HOME
-</div>
+      <div class="SkorTabelas">
+        <div id="timer">0:29</div>
+        <button id="toggleTimerBtn" aria-label="Başlat / Durdur" type="button" title="Başlat / Durdur">
+          <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <polygon points="8,5 19,12 8,19" />
+          </svg>
+          <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display:none;">
+            <rect x="6" y="5" width="4" height="14" />
+            <rect x="14" y="5" width="4" height="14" />
+          </svg>
+        </button>
+      </div>
+    </div>
 
-  </div>
+  <script>
+    // URL parametrelerini oku
+    const params = new URLSearchParams(window.location.search);
+
+    // player parametresi varsa kırmızı 1. oyuncu textine yaz
+    const playerName = params.get('player');
+    if (playerName) {
+      const kirmizi1OyuncuText = document.querySelector('.Kirmizi1OyuncuText');
+      if (kirmizi1OyuncuText) {
+        kirmizi1OyuncuText.textContent = playerName;
+      }
+    }
+
+    // roomId parametresi varsa OdaId alanına yaz
+    const roomId = params.get('roomId');
+    if (roomId) {
+      const odaIdElem = document.querySelector('.OdaId');
+      if (odaIdElem) {
+        odaIdElem.textContent = roomId;
+      }
+    }
+
+    // Kronometre başlangıç süresi (29 saniye)
+   let time = 60;
+    let timerInterval = null;
+    const timerElem = document.getElementById('timer');
+    const toggleBtn = document.getElementById('toggleTimerBtn');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const playIcon = document.getElementById('playIcon');
+
+    function formatTime(seconds) {
+      const m = Math.floor(seconds / 60);
+      const s = seconds % 60;
+      return `${m}:${s < 10 ? '0' : ''}${s}`;
+    }
+
+    function updateTimerDisplay() {
+      timerElem.textContent = formatTime(time);
+    }
+
+    function startTimer() {
+      if (timerInterval) return;
+      timerInterval = setInterval(() => {
+        if (time > 0) {
+          time--;
+          updateTimerDisplay();
+        } else {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          toggleBtn.disabled = true;
+          alert("Süre doldu!");
+          pauseIcon.style.display = "none";
+          playIcon.style.display = "block";
+        }
+      }, 1000);
+      pauseIcon.style.display = "block";
+      playIcon.style.display = "none";
+    }
+
+    function stopTimer() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      pauseIcon.style.display = "none";
+      playIcon.style.display = "block";
+    }
+
+    updateTimerDisplay();
+
+    toggleBtn.addEventListener('click', () => {
+      if (timerInterval) {
+        stopTimer();
+      } else {
+        startTimer();
+      }
+    });
+  </script>
 </body>
 </html>

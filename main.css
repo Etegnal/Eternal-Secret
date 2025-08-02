@@ -8,81 +8,143 @@ body, html {
   height: 100%;
   width: 100%;
   overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-page {
-  width: 1532px;
-  height: 695px;
-  position: relative;
+  width: 100%;
+  max-width: 900px;
+  min-height: 700px;
   background: #370C6B;
-  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  padding: 40px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* Skor tabelası sol */
-.score-box.left {
-  position: absolute;
-  left: 458px;
-  top: 348px;
-}
-
-/* Skor tabelası sağ */
-.score-box.right {
-  position: absolute;
-  left: 846px;
-  top: 348px;
+/* Genel stil ayarları */
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  color: #D4AB24;
+  font-family: 'Irish Grover', cursive;
+  user-select: none;
 }
 
 /* Başlıklar */
 .title {
-  position: absolute;
-  width: 677px;
-  left: 428px;
-  top: 89px;
-  text-align: center;
   color: #D4AB24;
   font-size: 64px;
   font-weight: 400;
-  word-wrap: break-word;
+  text-align: center;
+  margin: 0;
   user-select: none;
+  word-break: break-word;
 }
 
 .subtitle {
-  position: absolute;
-  width: 677px;
-  left: 428px;
-  top: 198px;
-  text-align: center;
   color: #D4AB24;
   font-size: 24px;
   font-weight: 400;
-  word-wrap: break-word;
+  text-align: center;
+  margin: 0 0 40px 0;
   user-select: none;
+  word-break: break-word;
+}
+
+/* Butonlar kapsayıcı içine alındı */
+.buttons-wrapper {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
 }
 
 /* Butonlar */
-.create-room, .join-room {
-  position: absolute;
-  width: 133px;
-  height: 88px;
-  text-align: center;
+.button {
+  width: 180px; /* büyütüldü */
+  height: 140px; /* büyütüldü */
+  background: linear-gradient(135deg, #6B1A5E, #3B1C7B);
+  border-radius: 55px;
   color: #D4AB24;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 400;
-  word-wrap: break-word;
   cursor: pointer;
   user-select: none;
-  background: none;
-  border: none;
   font-family: 'Irish Grover', cursive;
-  white-space: pre-line; /* <br> çalışması için */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  white-space: normal;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  transition: background 0.3s ease;
 }
 
-.create-room {
-  left: 506px;
-  top: 418px;
+.button:hover {
+  background: linear-gradient(135deg, #8A2E8A, #553399);
 }
 
-.join-room {
-  left: 894px;
-  top: 418px;
+/* Yeni eklenen footer stili */
+footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #D4AB24;
+  font-family: 'Irish Grover', cursive;
+  font-size: 14px;
+  user-select: none;
+}
+
+/* Başlık ve alt başlık sarmalayıcı */
+.header-wrapper {
+  margin-bottom: 60px; /* footer ile butonlar arası mesafeyi arttır */
+}
+/* Responsive font ve buton küçültme */
+@media (max-width: 480px) {
+  .title {
+    font-size: 40px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+  .button {
+    width: 140px;
+    height: 110px;
+    font-size: 22px;
+  }
+  .buttons-wrapper {
+    gap: 30px;
+    max-width: 300px;
+  }
+}
+/* Responsive tasarım için daha geniş ekranlar */
+@media (min-width: 481px) and (max-width: 900px) {
+  .title {
+    font-size: 48px;
+  }
+  .subtitle {
+    font-size: 20px;
+  }
+  .button {
+    width: 160px;
+    height: 120px;
+    font-size: 24px;
+  }
+  .buttons-wrapper {
+    gap: 40px;
+    max-width: 350px;
+  }
 }

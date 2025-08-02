@@ -309,7 +309,7 @@ body, html {
   width: 307px;
   height: 321px;
   padding: 33px 8px 12px 8px;
-  background: linear-gradient(270deg, rgba(25, 112, 226, 0.30) 0%, rgba(186, 17, 17, 0.30) 100%);
+  background: linear-gradient(270deg, #1970e24d 0%, rgba(186, 17, 17, 0.30) 100%);
   border-radius: 60px;
   display: flex;
   flex-direction: column;
@@ -362,8 +362,8 @@ body, html {
 /* Skor tabelası */
 .SkorTabelas {
   position: absolute;
-  top: 124px;
-  left: 50%;
+  top: 75px;
+  left: 10%;
   transform: translateX(-50%);
   width: 296px;
   height: 102px;
@@ -396,6 +396,53 @@ body, html {
   width: 79px;
   height: 66px;
 }
+.SkorTabelas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px; /* İstersen ayarla */
+  height: 80px;
+  border-radius: 15px;
+  /* Arka plan rengini kendi istediğin gibi ayarlayabilirsin */
+  background: linear-gradient(to right, #8b0000, #1e90ff);
+  position: relative;
+  margin: 20px auto;
+}
+
+#timer {
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  user-select: none;
+}
+
+#toggleTimerBtn {
+  margin-top: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+#toggleTimerBtn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#toggleTimerBtn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
 
 /* Responsive ayarlar */
 @media (max-width: 768px) {
@@ -499,3 +546,59 @@ body, html {
     height: 60px;
   }
 }
+/* Kronometre ve buton stil ayarları */
+.SkorTabelas {
+  background: linear-gradient(90deg, #720026, #1970e24d);
+  border-radius: 15px;
+  width: 315px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  font-size: 2rem;
+  user-select: none;
+}
+
+#timer {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.timer-controls {
+  margin-top: 15px;
+}
+
+#toggleTimerBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+#toggleTimerBtn:hover {
+  transform: scale(1.1);
+}
+
+#toggleTimerBtn svg {
+  fill: #d4af37; /* altın sarısı */
+  width: 32px;
+  height: 32px;
+}
+
+#toggleTimerBtn:hover svg {
+  fill: #fff;
+}
+
