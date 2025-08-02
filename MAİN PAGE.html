@@ -6,6 +6,7 @@
   <title>Eternal Secret</title>
   <link rel="stylesheet" href="main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet" />
+  <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
   <div class="main-page">
@@ -16,7 +17,7 @@
       <button class="button create-room" id="createRoomBtn">
         CREATE<br />ROOM
       </button>
-      <button class="button join-room" onclick="location.href='JOIN PAGE.html'">
+      <button class="button join-room" id="joinRoomBtn">
         JOIN<br />WITH ID
       </button>
     </div>
@@ -27,14 +28,46 @@
   </div>
 
   <script>
-    document.getElementById('createRoomBtn').addEventListener('click', function() {
+    const socket = io(); // Backend'e bağlan
+
+    // Create Room butonuna tıklama olayı
+    document.getElementById('createRoomBtn').addEventListener('click', function () {
       const playerName = prompt("Lütfen isminizi girin:");
       if (playerName && playerName.trim() !== "") {
-        // URL encode edip GAME PAGE.html sayfasına isim parametresi ile yönlendir
-        const encodedName = encodeURIComponent(playerName.trim());
-        window.location.href = `GAME PAGE.html?player=${encodedName}`;
+        // Backend'e oda oluşturma isteği gönder
+        socket.emit('createRoom', { playerName }, ({ success, roomId }) => {
+          if (success) {
+            // Başarılıysa GAME PAGE.html sayfasına yönlendir
+            const encodedName = encodeURIComponent(playerName.trim());
+            const encodedRoomId = encodeURIComponent(roomId);
+            window.location.href = `GAME PAGE.html?player=${encodedName}&roomId=${encodedRoomId}`;
+          } else {
+            alert("Oda oluşturulamadı. Lütfen tekrar deneyin.");
+          }
+        });
       } else {
         alert("Geçerli bir isim giriniz.");
+      }
+    });
+
+    // Join Room butonuna tıklama olayı
+    document.getElementById('joinRoomBtn').addEventListener('click', function () {
+      const roomId = prompt("Lütfen oda ID girin:");
+      const playerName = prompt("Lütfen isminizi girin:");
+      if (roomId && roomId.trim() !== "" && playerName && playerName.trim() !== "") {
+        // Backend'e odaya katılma isteği gönder
+        socket.emit('joinRoom', { roomId, playerName }, ({ success, message }) => {
+          if (success) {
+            // Başarılıysa GAME PAGE.html sayfasına yönlendir
+            const encodedName = encodeURIComponent(playerName.trim());
+            const encodedRoomId = encodeURIComponent(roomId.trim());
+            window.location.href = `GAME PAGE.html?player=${encodedName}&roomId=${encodedRoomId}`;
+          } else {
+            alert(message || "Odaya katılma başarısız. Lütfen tekrar deneyin.");
+          }
+        });
+      } else {
+        alert("Geçerli bir oda ID ve isim giriniz.");
       }
     });
   </script>
