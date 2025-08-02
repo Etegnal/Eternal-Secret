@@ -1,76 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 
-html, body {
-  margin: 0; padding: 0;
-  height: 100vh; width: 100vw;
-  background-color: #370C6B;
+body, html {
+  margin: 0;
+  padding: 0;
   font-family: 'Irish Grover', cursive;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #370C6B;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .main-page {
-  width: 90vw;
-  max-width: 1532px;
-  height: calc(90vw * 695 / 1532);
-  max-height: 695px;
+  width: 1532px;
+  height: 695px;
+  position: relative;
   background: #370C6B;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  user-select: none;
-  color: #D4AB24;
+  overflow: hidden;
+}
+
+/* Skor tabelası sol */
+.score-box.left {
+  position: absolute;
+  left: 458px;
+  top: 348px;
+}
+
+/* Skor tabelası sağ */
+.score-box.right {
+  position: absolute;
+  left: 846px;
+  top: 348px;
 }
 
 /* Başlıklar */
 .title {
-  font-weight: 400;
-  font-size: calc(16px + 48 * (90vw / 1532));
+  position: absolute;
+  width: 677px;
+  left: 428px;
+  top: 89px;
   text-align: center;
-  margin-bottom: calc(20px + 10 * (90vw / 1532));
+  color: #D4AB24;
+  font-size: 64px;
+  font-weight: 400;
+  word-wrap: break-word;
   user-select: none;
-  white-space: nowrap;
 }
 
 .subtitle {
-  font-weight: 400;
-  font-size: calc(10px + 14 * (90vw / 1532));
-  margin-bottom: calc(40px + 20 * (90vw / 1532));
+  position: absolute;
+  width: 677px;
+  left: 428px;
+  top: 198px;
   text-align: center;
+  color: #D4AB24;
+  font-size: 24px;
+  font-weight: 400;
+  word-wrap: break-word;
   user-select: none;
-  white-space: nowrap;
-}
-
-/* Butonların kapsayıcısı */
-.buttons-container {
-  display: flex;
-  gap: calc(60px * (90vw / 1532)); /* Butonlar arası boşluk */
 }
 
 /* Butonlar */
-.button {
-  width: calc(133px * (90vw / 1532));
-  height: calc(88px * (90vw / 1532));
-  background: linear-gradient(135deg, #5A2A7E, #2A3A8E);
-  border-radius: 15px;
-  color: #D4AB24;
-  font-size: calc(10px + 26 * (90vw / 1532));
-  font-weight: 400;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Yazıyı biraz yukarı al */
-  padding-top: 10%;
+.create-room, .join-room {
+  position: absolute;
+  width: 133px;
+  height: 88px;
   text-align: center;
-  white-space: pre-line;
+  color: #D4AB24;
+  font-size: 36px;
+  font-weight: 400;
+  word-wrap: break-word;
+  cursor: pointer;
   user-select: none;
+  background: none;
   border: none;
   font-family: 'Irish Grover', cursive;
-  box-shadow: 0 0 10px rgba(212,171,36,0.5);
-  transition: background 0.3s ease;
+  white-space: pre-line; /* <br> çalışması için */
 }
 
-.button:hover {
-  background: linear-gradient(135deg, #7A4A9E, #4A5ABF);
+.create-room {
+  left: 506px;
+  top: 418px;
+}
+
+.join-room {
+  left: 894px;
+  top: 418px;
 }
