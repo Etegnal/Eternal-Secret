@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Secret - Ayarlar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-left">
+            <a href="#" class="nav-link">Other Sites</a>
+            <a href="#" class="nav-link">How to Play?</a>
+        </div>
+        <div class="header-center">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="LOGOERENBEYAZ.png" alt="Logo" class="logo-image">
+                </a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+            <a href="#" class="nav-link">Settings</a>
+        </div>
+    </header>
+
+    <!-- Ayarlar -->
+    <main class="main-content">
+        <div class="settings-page" id="settingsPage">
+            <div class="settings-content">
+                <h2>Settings</h2>
+                
+                <div class="settings-section">
+                    <div class="setting-group">
+                        <h3>Dil / Language</h3>
+                        <div class="button-group">
+                            <button class="setting-btn active" onclick="changeLanguage('tr')" id="lang-tr">Türkçe</button>
+                            <button class="setting-btn" onclick="changeLanguage('en')" id="lang-en">English</button>
+                            <button class="setting-btn" onclick="changeLanguage('de')" id="lang-de">Deutsch</button>
+                            <button class="setting-btn" onclick="changeLanguage('fr')" id="lang-fr">Français</button>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3>Tema / Theme</h3>
+                        <div class="button-group">
+                            <button class="setting-btn active" onclick="changeTheme('light')" id="theme-light">Açık Tema</button>
+                            <button class="setting-btn" onclick="changeTheme('dark')" id="theme-dark">Koyu Tema</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-buttons">
+                    <button class="back-btn" onclick="window.location.href='index.html'">Geri</button>
+                    <button class="save-btn" onclick="saveSettings()">Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Eternal Secret. All rights reserved.</p>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="settings.js"></script>
+    <script>
+        // Sayfa yüklendiğinde dil ayarını yükle
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePageLanguage();
+        });
+    </script>
+</body>
+</html>

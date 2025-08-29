@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Secret - Oyun</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="game-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="LOGOERENBEYAZ.png" alt="Logo" class="logo-image">
+            </a>
+        </div>
+        <div class="header-right">
+            <a href="#" class="header-icon" title="Contact Us">
+                <i class="fas fa-phone"></i>
+            </a>
+            <div class="settings-dropdown">
+                <button class="header-icon settings-btn" title="Settings" id="settingsBtn">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <div class="settings-menu" id="settingsMenu">
+                    <div class="settings-menu-section">
+                        <h4>Dil / Language</h4>
+                        <div class="settings-menu-buttons">
+                            <button class="menu-btn active" onclick="changeGameLanguage('tr')" id="game-lang-tr">Türkçe</button>
+                            <button class="menu-btn" onclick="changeGameLanguage('en')" id="game-lang-en">English</button>
+                            <button class="menu-btn" onclick="changeGameLanguage('de')" id="game-lang-de">Deutsch</button>
+                            <button class="menu-btn" onclick="changeGameLanguage('fr')" id="game-lang-fr">Français</button>
+                        </div>
+                    </div>
+                    <div class="settings-menu-section">
+                        <h4>Tema / Theme</h4>
+                        <div class="settings-menu-buttons">
+                            <button class="menu-btn active" onclick="changeGameTheme('light')" id="game-theme-light">Açık Tema</button>
+                            <button class="menu-btn" onclick="changeGameTheme('dark')" id="game-theme-dark">Koyu Tema</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Oyun Ekranı -->
+    <main class="main-content">
+        <div class="game-screen" id="gameScreen">
+            <!-- Skor Paneli -->
+            <div class="score-panel">
+                <div class="teams-scores" id="teamsScores">
+                    <!-- Takım skorları buraya dinamik olarak eklenecek -->
+                </div>
+                <div class="timer-section">
+                    <div class="current-team" id="currentTeam">Takım 1</div>
+                    <div class="timer-container">
+                        <button class="timer-btn" onclick="toggleTimer()" id="timerToggleBtn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="timer" id="timer">60</div>
+                        <button class="timer-btn" onclick="resetTimer()">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kelime Kartı Yığını -->
+            <div class="word-card-stack">
+                <div class="word-card">
+                    <div class="main-word" id="mainWord">KELİME</div>
+                    <div class="separator"></div>
+                    <div class="forbidden-words">
+                        <div class="forbidden-word" id="forbidden1">YASAK KELİME 1</div>
+                        <div class="forbidden-word" id="forbidden2">YASAK KELİME 2</div>
+                        <div class="forbidden-word" id="forbidden3">YASAK KELİME 3</div>
+                        <div class="forbidden-word" id="forbidden4">YASAK KELİME 4</div>
+                        <div class="forbidden-word" id="forbidden5">YASAK KELİME 5</div>
+                    </div>
+                </div>
+                
+                <!-- Oyun Başlamadan Önce Overlay -->
+                <div class="word-card-overlay" id="wordCardOverlay">
+                    <div class="overlay-content">
+                        <img src="LOGOERENBEYAZ.png" alt="Logo" class="overlay-logo">
+                        <h2 class="overlay-text">CAN YOU FIND IT WITHOUT FAULT?</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kontrol Butonları -->
+            <div class="control-buttons">
+                <button class="correct-btn" onclick="correctAnswer()">DOĞRU</button>
+                <div class="pass-section">
+                    <button class="pass-btn" onclick="passAnswer()">PASS</button>
+                    <div class="pass-count" id="passCount">3/3</div>
+                </div>
+                <button class="foul-btn" onclick="foulAnswer()">FAUL!</button>
+            </div>
+
+
+        </div>
+    </main>
+
+    <script src="translations.js"></script>
+    <script src="game.js"></script>
+    <script>
+        // Sayfa yüklendiğinde tema ve dil ayarını yükle
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTheme();
+            updatePageLanguage();
+        });
+
+        // Temayı yükle
+        function loadTheme() {
+            const savedSettings = localStorage.getItem('gameSettings');
+            if (savedSettings) {
+                const settings = JSON.parse(savedSettings);
+                if (settings.theme) {
+                    applyTheme(settings.theme);
+                }
+            }
+        }
+
+        // Temayı uygula
+        function applyTheme(theme) {
+            const body = document.body;
+            if (theme === 'light') {
+                body.classList.add('light-theme');
+                body.classList.remove('dark-theme');
+            } else {
+                body.classList.add('dark-theme');
+                body.classList.remove('light-theme');
+            }
+        }
+    </script>
+</body>
+</html>

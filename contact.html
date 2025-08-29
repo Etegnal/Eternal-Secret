@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Secret - İletişim</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-left">
+            <a href="#" class="nav-link">Other Sites</a>
+            <a href="#" class="nav-link">How to Play?</a>
+        </div>
+        <div class="header-center">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="LOGOERENBEYAZ.png" alt="Logo" class="logo-image">
+                </a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+            <a href="settings.html" class="nav-link">Settings</a>
+        </div>
+    </header>
+
+    <!-- İletişim -->
+    <main class="main-content">
+        <div class="contact-page" id="contactPage">
+            <div class="contact-content">
+                <h2>İletişim</h2>
+                
+                <div class="contact-section">
+                    <div class="contact-info">
+                        <h3>Bize Ulaşın</h3>
+                        <p>Yeni kelimeler önerin, isteklerinizi paylaşın veya sorularınızı sorun.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>erenaoyunda@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        
+                        <div class="form-group">
+                            <label for="fullName">Ad Soyad:</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Adınızı ve soyadınızı girin">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-posta:</label>
+                            <input type="email" id="email" name="email" required placeholder="E-posta adresinizi girin">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="wordCard">Kelime Kartı:</label>
+                            <textarea id="wordCard" name="wordCard" rows="6" placeholder="Önerdiğiniz kelimeyi ve yasaklı kelimeleri buraya yazın..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mesaj (İsteğe bağlı):</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Ek mesajınızı buraya yazabilirsiniz..."></textarea>
+                        </div>
+                        
+                        <div class="contact-buttons">
+                            <button type="button" class="back-btn" onclick="window.location.href='index.html'">Geri</button>
+                            <button type="submit" class="send-btn">Gönder</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Eternal Secret. All rights reserved.</p>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="contact.js"></script>
+    <script>
+        // Sayfa yüklendiğinde tema ve dil ayarını yükle
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTheme();
+            updatePageLanguage();
+        });
+
+        // Temayı yükle
+        function loadTheme() {
+            const savedSettings = localStorage.getItem('gameSettings');
+            if (savedSettings) {
+                const settings = JSON.parse(savedSettings);
+                if (settings.theme) {
+                    applyTheme(settings.theme);
+                }
+            }
+        }
+
+        // Temayı uygula
+        function applyTheme(theme) {
+            const body = document.body;
+            if (theme === 'light') {
+                body.classList.add('light-theme');
+                body.classList.remove('dark-theme');
+            } else {
+                body.classList.add('dark-theme');
+                body.classList.remove('light-theme');
+            }
+        }
+    </script>
+</body>
+</html>

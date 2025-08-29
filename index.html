@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Secret - Ana Sayfa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-left">
+            <a href="#" class="nav-link">Other Sites</a>
+            <a href="#" class="nav-link">How to Play?</a>
+        </div>
+        <div class="header-center">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="LOGOERENBEYAZ.png" alt="Logo" class="logo-image">
+                </a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+            <a href="settings.html" class="nav-link">Settings</a>
+        </div>
+    </header>
+
+    <!-- Ana Sayfa -->
+    <main class="main-content">
+        <div class="welcome-screen" id="welcomeScreen">
+            <div class="welcome-content">
+                <h1 class="main-title">ETERNAL SECRET</h1>
+                <h2 class="subtitle">CAN YOU FIND IT WITHOUT FAULT?</h2>
+                <button class="play-btn" onclick="window.location.href='team-setup.html'">PLAY</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Eternal Secret. All rights reserved.</p>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script>
+        // Sayfa yüklendiğinde tema ve dil ayarını yükle
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTheme();
+            updatePageLanguage();
+        });
+
+        // Temayı yükle
+        function loadTheme() {
+            const savedSettings = localStorage.getItem('gameSettings');
+            if (savedSettings) {
+                const settings = JSON.parse(savedSettings);
+                if (settings.theme) {
+                    applyTheme(settings.theme);
+                }
+            }
+        }
+
+        // Temayı uygula
+        function applyTheme(theme) {
+            const body = document.body;
+            if (theme === 'light') {
+                body.classList.add('light-theme');
+                body.classList.remove('dark-theme');
+            } else {
+                body.classList.add('dark-theme');
+                body.classList.remove('light-theme');
+            }
+        }
+    </script>
+</body>
+</html>

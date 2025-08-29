@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Secret - Takım Kurulumu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-left">
+            <a href="#" class="nav-link">Other Sites</a>
+            <a href="#" class="nav-link">How to Play?</a>
+        </div>
+        <div class="header-center">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="LOGOERENBEYAZ.png" alt="Logo" class="logo-image">
+                </a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+            <a href="settings.html" class="nav-link">Settings</a>
+        </div>
+    </header>
+
+    <!-- Takım Kurulumu -->
+    <main class="main-content">
+        <div class="team-setup" id="teamSetup">
+            <div class="setup-content">
+                <h2>Takım ve Oyun<br>Kurulumu</h2>
+                
+                <div class="settings-row">
+                    <div class="team-count-section">
+                        <label for="teamCount">Takım Sayısı:</label>
+                        <select id="teamCount" onchange="updateTeamInputs()">
+                            <option value="2">2 Takım</option>
+                            <option value="3">3 Takım</option>
+                            <option value="4">4 Takım</option>
+                        </select>
+                    </div>
+
+                    <div class="round-time-section">
+                        <label for="roundTime">Tur Süresi (saniye):</label>
+                        <input type="number" id="roundTime" value="60" min="30" max="120">
+                    </div>
+                </div>
+
+                <div class="team-names-section">
+                    <div id="teamInputs">
+                        <div class="team-input team-blue">
+                            <label>Takım 1:</label>
+                            <input type="text" id="team1" placeholder="Takım adı girin" value="Takım 1">
+                        </div>
+                        <div class="team-input team-red">
+                            <label>Takım 2:</label>
+                            <input type="text" id="team2" placeholder="Takım adı girin" value="Takım 2">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setup-buttons">
+                    <button class="start-btn" onclick="startGame()">OYNA</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="translations.js"></script>
+    <script src="team-setup.js"></script>
+    <script>
+        // Sayfa yüklendiğinde tema ve dil ayarını yükle
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTheme();
+            updatePageLanguage();
+        });
+
+        // Temayı yükle
+        function loadTheme() {
+            const savedSettings = localStorage.getItem('gameSettings');
+            if (savedSettings) {
+                const settings = JSON.parse(savedSettings);
+                if (settings.theme) {
+                    applyTheme(settings.theme);
+                }
+            }
+        }
+
+        // Temayı uygula
+        function applyTheme(theme) {
+            const body = document.body;
+            if (theme === 'light') {
+                body.classList.add('light-theme');
+                body.classList.remove('dark-theme');
+            } else {
+                body.classList.add('dark-theme');
+                body.classList.remove('light-theme');
+            }
+        }
+    </script>
+</body>
+</html>
