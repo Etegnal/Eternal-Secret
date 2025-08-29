@@ -117,15 +117,22 @@
 
             <!-- Kontrol Butonları -->
             <div class="control-buttons">
-                <div class="top-row">
-                    <button class="correct-btn" onclick="correctAnswer()">DOĞRU</button>
-                    <button class="foul-btn" onclick="foulAnswer()">FAUL!</button>
+                <button class="correct-btn" onclick="correctAnswer()">DOĞRU</button>
+                <div class="pass-section">
+                    <button class="pass-btn" onclick="passAnswer()">PASS</button>
+                    <div class="pass-count" id="passCount">3/3</div>
                 </div>
-                <div class="bottom-row">
-                    <div class="pass-section">
-                        <button class="pass-btn" onclick="passAnswer()">PASS</button>
-                        <div class="pass-count" id="passCount">3/3</div>
+                <button class="foul-btn" onclick="foulAnswer()">FAUL!</button>
+            </div>
+
+            <!-- Tur Sonu Ekranı (Mobil) -->
+            <div class="round-end-screen" id="roundEndScreen">
+                <div class="round-end-content">
+                    <h2 class="round-end-title">TUR SONU</h2>
+                    <div class="round-end-scores" id="roundEndScores">
+                        <!-- Skorlar buraya dinamik olarak eklenecek -->
                     </div>
+                    <button class="next-team-btn" onclick="startNextTeam()">DİĞER TAKIMA BAŞLA</button>
                 </div>
             </div>
 

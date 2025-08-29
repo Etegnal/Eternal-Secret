@@ -574,6 +574,13 @@ body::-webkit-scrollbar {
     margin-top: -2rem;
 }
 
+/* Desktop'ta tur sonu ekranını gizle */
+@media (min-width: 769px) {
+    .round-end-screen {
+        display: none !important;
+    }
+}
+
 /* Score Panel */
 .score-panel {
     display: flex;
@@ -818,7 +825,7 @@ body::-webkit-scrollbar {
     gap: 1.5rem;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-direction: row;
     margin-top: 0.3rem;
     margin-bottom: 1rem;
 }
@@ -2587,7 +2594,7 @@ body::-webkit-scrollbar {
     }
     
     .timer {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     
     .word-card-stack {
@@ -2612,21 +2619,21 @@ body::-webkit-scrollbar {
     .control-buttons {
         gap: 1rem;
         margin-top: 0.8rem;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
     
-    .control-buttons .top-row {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
+    .control-buttons .correct-btn,
+    .control-buttons .foul-btn {
+        flex: 0 0 auto;
     }
     
-    .control-buttons .bottom-row {
-        display: flex;
-        justify-content: center;
-        margin-top: 0.8rem;
+    .control-buttons .pass-section {
+        flex: 0 0 100%;
+        margin-top: 0.5rem;
+        order: 2;
     }
     
     .correct-btn,
@@ -2636,6 +2643,95 @@ body::-webkit-scrollbar {
         font-size: 1.1rem;
         width: 140px;
         height: 50px;
+    }
+    
+    /* Tur Sonu Ekranı (Mobil) */
+    .round-end-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+    
+    .round-end-content {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
+        max-width: 90%;
+        backdrop-filter: blur(15px);
+    }
+    
+    .round-end-title {
+        font-size: 2rem;
+        color: #FFD700;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .round-end-scores {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .round-end-score {
+        padding: 1rem;
+        border-radius: 15px;
+        color: white;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    .round-end-score.team-blue {
+        background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(0, 86, 179, 0.6));
+        border: 2px solid rgba(0, 123, 255, 0.5);
+    }
+    
+    .round-end-score.team-red {
+        background: linear-gradient(135deg, rgba(220, 53, 69, 0.8), rgba(139, 0, 0, 0.6));
+        border: 2px solid rgba(220, 53, 69, 0.5);
+    }
+    
+    .round-end-score.team-purple {
+        background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(88, 28, 135, 0.6));
+        border: 2px solid rgba(147, 51, 234, 0.5);
+    }
+    
+    .round-end-score.team-green {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.8), rgba(21, 128, 61, 0.6));
+        border: 2px solid rgba(34, 197, 94, 0.5);
+    }
+    
+    .next-team-btn {
+        background: linear-gradient(45deg, #FFD700, #FFA500);
+        color: #333;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 15px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .next-team-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -2813,20 +2909,20 @@ body::-webkit-scrollbar {
         margin-bottom: 0.3rem;
     }
     
+    .teams-scores {
+        gap: 0.8rem;
+        order: 1;
+        margin-bottom: 0.3rem;
+    }
+    
     .current-team {
         font-size: 1.1rem;
-        order: 1;
+        order: 2;
         text-align: center;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.2rem;
         font-weight: 700;
         color: #FFD700;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-    
-    .teams-scores {
-        gap: 0.8rem;
-        order: 2;
-        margin-bottom: 0.3rem;
     }
     
     .team-score {
@@ -2855,7 +2951,7 @@ body::-webkit-scrollbar {
     }
     
     .timer {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .current-team {
@@ -2885,21 +2981,21 @@ body::-webkit-scrollbar {
     .control-buttons {
         gap: 0.8rem;
         margin-top: 0.5rem;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
     
-    .control-buttons .top-row {
-        display: flex;
-        gap: 0.8rem;
-        justify-content: center;
+    .control-buttons .correct-btn,
+    .control-buttons .foul-btn {
+        flex: 0 0 auto;
     }
     
-    .control-buttons .bottom-row {
-        display: flex;
-        justify-content: center;
+    .control-buttons .pass-section {
+        flex: 0 0 100%;
         margin-top: 0.5rem;
+        order: 2;
     }
     
     .correct-btn,
@@ -2909,5 +3005,31 @@ body::-webkit-scrollbar {
         font-size: 1rem;
         width: 120px;
         height: 45px;
+    }
+    
+    /* Tur Sonu Ekranı (Küçük Mobil) */
+    .round-end-content {
+        padding: 1.5rem;
+        max-width: 95%;
+    }
+    
+    .round-end-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .round-end-scores {
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .round-end-score {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+    
+    .next-team-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
     }
 }

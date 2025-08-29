@@ -267,6 +267,17 @@ function endRound() {
     clearInterval(gameState.timer);
     gameState.isGameActive = false;
     
+    // Mobil cihazlarda tur sonu ekranını göster
+    if (window.innerWidth <= 768) {
+        showRoundEndScreen();
+    } else {
+        // Desktop'ta direkt sonraki takıma geç
+        nextTeam();
+    }
+}
+
+// Sonraki takıma geç (desktop için)
+function nextTeam() {
     // Sonraki takıma geç
     gameState.currentTeamIndex = (gameState.currentTeamIndex + 1) % gameState.teams.length;
     
@@ -526,3 +537,80 @@ function applyTheme(theme) {
         body.classList.remove('light-theme');
     }
 }
+
+// Tur sonu ekranını göster (mobil için)
+function showRoundEndScreen() {
+    const roundEndScreen = document.getElementById('roundEndScreen');
+    const roundEndScores = document.getElementById('roundEndScores');
+    
+    if (!roundEndScreen || !roundEndScores) return;
+    
+    // Skorları temizle
+    roundEndScores.innerHTML = '';
+    
+    // Her takımın skorunu ekle
+    gameState.teams.forEach((team, index) => {
+        const scoreElement = document.createElement('div');
+        scoreElement.className = `round-end-score team-${getTeamColor(index)}`;
+        scoreElement.innerHTML = `
+            <div style="font-weight: 700; margin-bottom: 0.3rem;">${team.name}</div>
+            <div style="font-size: 1.5rem; font-weight: 800;">${team.score}</div>
+        `;
+        roundEndScores.appendChild(scoreElement);
+    });
+    
+    // Ekranı göster
+    roundEndScreen.style.display = 'flex';
+}
+
+// Tur sonu ekranını gizle
+function hideRoundEndScreen() {
+    const roundEndScreen = document.getElementById('roundEndScreen');
+    if (roundEndScreen) {
+        roundEndScreen.style.display = 'none';
+    }
+}
+
+// Takım rengini al
+function getTeamColor(index) {
+    const colors = ['blue', 'red', 'purple', 'green'];
+    return colors[index] || 'blue';
+}
+// Diğer takıma başla
+function startNextTeam() {
+    // Tur sonu ekranını gizle
+    hideRoundEndScreen();
+    
+    // Sonraki takıma geç
+    gameState.currentTeamIndex = (gameState.currentTeamIndex + 1) % gameState.teams.length;
+    
+    // Eğer tüm takımlar oynadıysa, yeni tura geç
+    if (gameState.currentTeamIndex === 0) {
+        gameState.currentRound++;
+    }
+    
+    // Pass sayısını sıfırla
+    gameState.passCount = gameState.maxPassCount;
+    
+    // Süreyi sıfırla
+    gameState.timeLeft = gameState.roundTime;
+    
+    // Skor panelini güncelle
+    updateScorePanel();
+    
+    // Pass sayısını güncelle
+    updatePassCount();
+    
+    // Yeni kelimeyi göster
+    showNextWord();
+    
+    // Arka plan rengini güncelle
+    updateBackgroundColor();
+    
+    // Timer'ı durdur
+    stopTimer();
+    
+    // Oyun durumunu kaydet
+    saveGameState();
+}
+
