@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="game-page">
-    <!-- Header -->
+    <!-- Desktop Header -->
     <header class="header">
         <div class="logo">
             <a href="index.html">
@@ -47,6 +47,29 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="LOGOERENBEYAZ.png" alt="Logo" class="logo-image">
+            </a>
+        </div>
+        <div class="title">Eternal Secret</div>
+        <button class="hamburger-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="nav-links">
+            <a href="other-sites.html" class="nav-link">Other Sites</a>
+            <a href="how-to-play.html" class="nav-link">How to Play?</a>
+            <a href="contact.html" class="nav-link">Contact Us</a>
+            <a href="settings.html" class="nav-link">Settings</a>
+        </div>
+    </div>
 
     <!-- Oyun Ekranı -->
     <main class="main-content">
@@ -138,6 +161,23 @@
                 body.classList.remove('light-theme');
             }
         }
+
+        // Mobile menu toggle function
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenu.classList.toggle('open');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu .nav-link');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    toggleMobileMenu();
+                });
+            });
+        });
     </script>
 </body>
 </html>

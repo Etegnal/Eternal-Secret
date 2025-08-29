@@ -91,7 +91,17 @@ const translations = {
          tip3: "Takım arkadaşınızla iyi iletişim kurun",
          tip4: "Yaratıcı açıklamalar kullanın",
          homePage: "Ana Sayfa",
-         startGame: "Oyunu Başlat"
+         startGame: "Oyunu Başlat",
+         
+         // Other Sites sayfası
+         otherProjectsTitle: "Diğer Projelerimiz",
+         project1: "Weathernal",
+         project2: "Isı Takip Sistemi",
+         project3: "Be Max",
+         project1Desc: "Gerçek zamanlı hava durumu takip web sitesi. Dünya genelinde şehirlerin hava durumu bilgilerini anlık olarak görüntüleyin.",
+         project2Desc: "Anlık olarak veriler ile sıcaklık takibi yapan ve aralık dışındakileri mail ile bildiren bir otomasyon sistemi.",
+         project3Desc: "Formula 1 pilotu olarak heycanlı bir serüven. Bu aksiyon/macera oyunumuzu drive üzerinden android cihazlarınızda deneyebilirsiniz.",
+         visitSite: "Ziyaret Et"
      },
     
     en: {
@@ -185,7 +195,17 @@ const translations = {
          tip3: "Communicate well with your teammate",
          tip4: "Use creative explanations",
          homePage: "Home Page",
-         startGame: "Start Game"
+         startGame: "Start Game",
+         
+         // Other Sites page
+         otherProjectsTitle: "Our Other Projects",
+         project1: "Weathernal",
+         project2: "Temperature Tracking System",
+         project3: "Be Max",
+         project1Desc: "Real-time weather tracking website. View live weather information for cities around the world.",
+         project2Desc: "Real-time temperature tracking system with data monitoring and email notifications for out-of-range values.",
+         project3Desc: "An exciting adventure as a Formula 1 driver. You can try this action/adventure game on your Android devices via drive.",
+         visitSite: "Visit Site"
      },
     
     de: {
@@ -279,7 +299,17 @@ const translations = {
          tip3: "Kommunizieren Sie gut mit Ihrem Teammitglied",
          tip4: "Verwenden Sie kreative Erklärungen",
          homePage: "Startseite",
-         startGame: "Spiel starten"
+         startGame: "Spiel starten",
+         
+         // Other Sites Seite
+         otherProjectsTitle: "Unsere Anderen Projekte",
+         project1: "Weathernal",
+         project2: "Temperaturverfolgungssystem",
+         project3: "Be Max",
+         project1Desc: "Echtzeit-Wetterverfolgungswebsite. Sehen Sie Live-Wetterinformationen für Städte auf der ganzen Welt.",
+         project2Desc: "Echtzeit-Temperaturverfolgungssystem mit Datenüberwachung und E-Mail-Benachrichtigungen für Werte außerhalb des Bereichs.",
+         project3Desc: "Ein aufregendes Abenteuer als Formel-1-Fahrer. Sie können dieses Action/Abenteuer-Spiel auf Ihren Android-Geräten über Drive ausprobieren.",
+         visitSite: "Seite Besuchen"
      },
     
     fr: {
@@ -373,7 +403,17 @@ const translations = {
          tip3: "Communiquez bien avec votre coéquipier",
          tip4: "Utilisez des explications créatives",
          homePage: "Page d'Accueil",
-         startGame: "Commencer le Jeu"
+         startGame: "Commencer le Jeu",
+         
+         // Page Autres Sites
+         otherProjectsTitle: "Nos Autres Projets",
+         project1: "Weathernal",
+         project2: "Système de Suivi de Température",
+         project3: "Be Max",
+         project1Desc: "Site web de suivi météo en temps réel. Consultez les informations météorologiques en direct pour les villes du monde entier.",
+         project2Desc: "Système de suivi de température en temps réel avec surveillance des données et notifications par e-mail pour les valeurs hors plage.",
+         project3Desc: "Une aventure passionnante en tant que pilote de Formule 1. Vous pouvez essayer ce jeu d'action/aventure sur vos appareils Android via Drive.",
+         visitSite: "Visiter le Site"
      }
 };
 
@@ -643,6 +683,43 @@ function updatePageLanguage() {
      
      const startGameBtnHowToPlay = document.querySelector('.how-to-play-buttons .play-btn');
      if (startGameBtnHowToPlay) startGameBtnHowToPlay.textContent = translate('startGame');
+     
+     // Other Sites sayfası
+     const otherProjectsTitle = document.querySelector('.other-sites-content h2');
+     if (otherProjectsTitle) otherProjectsTitle.textContent = translate('otherProjectsTitle');
+     
+     const siteCards = document.querySelectorAll('.site-card');
+     if (siteCards.length >= 3) {
+         // Proje 1
+         const project1Title = siteCards[0].querySelector('h3');
+         if (project1Title) project1Title.textContent = translate('project1');
+         const project1Desc = siteCards[0].querySelector('p');
+         if (project1Desc) project1Desc.textContent = translate('project1Desc');
+         
+         // Proje 2
+         const project2Title = siteCards[1].querySelector('h3');
+         if (project2Title) project2Title.textContent = translate('project2');
+         const project2Desc = siteCards[1].querySelector('p');
+         if (project2Desc) project2Desc.textContent = translate('project2Desc');
+         
+         // Proje 3
+         const project3Title = siteCards[2].querySelector('h3');
+         if (project3Title) project3Title.textContent = translate('project3');
+         const project3Desc = siteCards[2].querySelector('p');
+         if (project3Desc) project3Desc.textContent = translate('project3Desc');
+     }
+     
+     // Ziyaret Et butonları
+     const visitBtns = document.querySelectorAll('.visit-btn');
+     visitBtns.forEach(btn => {
+         const icon = btn.querySelector('i');
+         const text = btn.childNodes[2]?.textContent?.trim();
+         if (text && text !== translate('visitSite')) {
+             btn.innerHTML = `<i class="fas fa-external-link-alt"></i> ${translate('visitSite')}`;
+         }
+     });
+     
+
      
      console.log('Sayfa dili güncellendi:', currentLang);
  }
