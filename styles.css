@@ -140,6 +140,16 @@ body {
     box-sizing: border-box;
 }
 
+/* Scroll barını gizle ama scroll özelliğini koru */
+body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
 /* Team Setup sayfası için */
 .team-setup {
     background: transparent;
@@ -999,6 +1009,466 @@ body {
         opacity: 1;
     }
 }
+
+/* How to Play Sayfası Stilleri */
+.how-to-play-page {
+    background: transparent;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+}
+
+/* How to Play sayfası için main-content özel ayarları */
+.main-content.how-to-play-content {
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    height: calc(100vh - 200px);
+}
+
+.how-to-play-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #FFD700;
+    font-family: 'Irish Grover', cursive;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.rules-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.rule-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.rule-icon {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+.rule-card h3 {
+    font-size: 1.3rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.rule-card p {
+    color: white;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.example-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 4rem;
+}
+
+.example-section h3 {
+    font-size: 1.8rem;
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.example-card {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.example-word, .example-forbidden {
+    flex: 1;
+    min-width: 280px;
+}
+
+.example-word h4, .example-forbidden h4 {
+    color: #FFD700;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.main-word-example {
+    display: block;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #333;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.forbidden-words-example {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.forbidden-word-example {
+    background: rgba(244, 67, 54, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.example-tips h4 {
+    color: #FFD700;
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.example-tips ul {
+    color: white;
+    line-height: 1.8;
+    margin-left: 1.5rem;
+}
+
+.example-tips li {
+    margin-bottom: 0.5rem;
+}
+
+.scoring-section {
+    margin-bottom: 4rem;
+}
+
+.scoring-section h3 {
+    font-size: 1.8rem;
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.scoring-cards {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.score-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    min-width: 140px;
+    transition: transform 0.3s ease;
+}
+
+.score-card:hover {
+    transform: translateY(-5px);
+}
+
+.score-card.correct {
+    border-color: #4CAF50;
+}
+
+.score-card.pass {
+    border-color: #FF9800;
+}
+
+.score-card.foul {
+    border-color: #f44336;
+}
+
+.score-card i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.score-card.correct i {
+    color: #4CAF50;
+}
+
+.score-card.pass i {
+    color: #FF9800;
+}
+
+.score-card.foul i {
+    color: #f44336;
+}
+
+.score-card h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.score-card p {
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.tips-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 4rem;
+}
+
+.tips-section h3 {
+    font-size: 1.8rem;
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.tip-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tip-item i {
+    color: #FFD700;
+    font-size: 1.5rem;
+    min-width: 30px;
+}
+
+.tip-item p {
+    color: white;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.how-to-play-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    flex-direction: row !important;
+}
+
+.how-to-play-buttons .back-btn,
+.how-to-play-buttons .play-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 160px;
+    height: 55px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.how-to-play-buttons .back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.how-to-play-buttons .back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #FFD700;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.how-to-play-buttons .play-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+    .how-to-play-buttons .play-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* How to Play sayfası responsive */
+    @media (max-width: 768px) {
+        .how-to-play-content h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .rules-section {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .rule-card {
+            padding: 1.5rem;
+        }
+        
+        .example-section {
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .example-card {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .scoring-section {
+            margin-bottom: 3rem;
+        }
+        
+        .scoring-cards {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .tips-section {
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .tips-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .tip-item {
+            padding: 1.2rem;
+            gap: 1rem;
+        }
+        
+        .how-to-play-buttons {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            width: 100%;
+        }
+        
+        .how-to-play-buttons .back-btn,
+        .how-to-play-buttons .play-btn {
+            width: 180px;
+            height: 50px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .how-to-play-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .how-to-play-page {
+            padding: 1rem;
+        }
+        
+        .rule-card {
+            padding: 1.2rem;
+        }
+        
+        .rule-icon {
+            font-size: 2rem;
+        }
+        
+        .example-section {
+            padding: 1.5rem;
+        }
+        
+        .example-card {
+            gap: 1.5rem;
+        }
+        
+        .main-word-example {
+            font-size: 1.3rem;
+            padding: 0.8rem 1.5rem;
+        }
+        
+        .forbidden-word-example {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+        }
+        
+        .score-card {
+            min-width: 120px;
+            padding: 1.5rem;
+        }
+        
+        .tip-item {
+            padding: 1rem;
+            gap: 0.8rem;
+        }
+        
+        .tip-item i {
+            font-size: 1.2rem;
+        }
+        
+        .how-to-play-buttons {
+            flex-direction: row;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+        }
+        
+        .how-to-play-buttons .back-btn,
+        .how-to-play-buttons .play-btn {
+            width: 160px;
+            height: 45px;
+            font-size: 1rem;
+        }
+    }
 
 .contact-content h2 {
     font-size: 2rem;

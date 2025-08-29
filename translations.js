@@ -60,9 +60,39 @@ const translations = {
         sendError: "Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.",
         validationFullName: "Lütfen adınızı ve soyadınızı girin.",
         validationEmail: "Lütfen e-posta adresinizi girin.",
-        validationEmailInvalid: "Lütfen geçerli bir e-posta adresi girin.",
-        validationWordCard: "Lütfen kelime kartı alanını doldurun."
-    },
+                 validationEmailInvalid: "Lütfen geçerli bir e-posta adresi girin.",
+         validationWordCard: "Lütfen kelime kartı alanını doldurun.",
+         
+         // How to Play sayfası
+         howToPlayTitle: "Nasıl Oynanır?",
+         teamSetup: "Takım Kurulumu",
+         teamSetupDesc: "2-4 takım arası oyuncu ile oynanır. Her takım en az 2 kişiden oluşmalıdır.",
+         timeLimit: "Süre Sınırı",
+         timeLimitDesc: "Her tur için belirlenen süre içinde kelimeyi bulmaya çalışın. Süre dolduğunda tur biter.",
+         wordExplanation: "Kelime Açıklama",
+         wordExplanationDesc: "Takım arkadaşınıza kelimeyi açıklayın ama yasaklı kelimeleri kullanmayın!",
+         passRights: "Pass Hakkı",
+         passRightsDesc: "Her takımın 3 pass hakkı vardır. Zor kelimeleri atlayabilirsiniz.",
+         exampleGame: "Örnek Oyun",
+         mainWord: "Ana Kelime",
+         forbiddenWords: "Yasaklı Kelimeler",
+         goodExamples: "İyi Açıklama Örnekleri:",
+         badExamples: "Yanlış Açıklama Örnekleri:",
+         scoringSystem: "Puanlama Sistemi",
+         correct: "DOĞRU",
+         pass: "PASS",
+         foul: "FAUL",
+         plusOne: "+1 Puan",
+         zeroPoints: "0 Puan",
+         minusOne: "-1 Puan",
+         gameTips: "Oyun İpuçları",
+         tip1: "Yasaklı kelimeleri kullanmadan açıklamaya çalışın",
+         tip2: "Süreyi verimli kullanın, çok uzun açıklamalardan kaçının",
+         tip3: "Takım arkadaşınızla iyi iletişim kurun",
+         tip4: "Yaratıcı açıklamalar kullanın",
+         homePage: "Ana Sayfa",
+         startGame: "Oyunu Başlat"
+     },
     
     en: {
         // Ana sayfa
@@ -124,9 +154,39 @@ const translations = {
         sendError: "An error occurred while sending the message. Please try again.",
         validationFullName: "Please enter your full name.",
         validationEmail: "Please enter your email address.",
-        validationEmailInvalid: "Please enter a valid email address.",
-        validationWordCard: "Please fill in the word card field."
-    },
+                 validationEmailInvalid: "Please enter a valid email address.",
+         validationWordCard: "Please fill in the word card field.",
+         
+         // How to Play page
+         howToPlayTitle: "How to Play?",
+         teamSetup: "Team Setup",
+         teamSetupDesc: "Play with 2-4 teams. Each team should have at least 2 players.",
+         timeLimit: "Time Limit",
+         timeLimitDesc: "Try to find the word within the time limit for each round. The round ends when time runs out.",
+         wordExplanation: "Word Explanation",
+         wordExplanationDesc: "Explain the word to your teammate but don't use forbidden words!",
+         passRights: "Pass Rights",
+         passRightsDesc: "Each team has 3 pass rights. You can skip difficult words.",
+         exampleGame: "Example Game",
+         mainWord: "Main Word",
+         forbiddenWords: "Forbidden Words",
+         goodExamples: "Good Explanation Examples:",
+         badExamples: "Wrong Explanation Examples:",
+         scoringSystem: "Scoring System",
+         correct: "CORRECT",
+         pass: "PASS",
+         foul: "FOUL",
+         plusOne: "+1 Point",
+         zeroPoints: "0 Points",
+         minusOne: "-1 Point",
+         gameTips: "Game Tips",
+         tip1: "Try to explain without using forbidden words",
+         tip2: "Use time efficiently, avoid very long explanations",
+         tip3: "Communicate well with your teammate",
+         tip4: "Use creative explanations",
+         homePage: "Home Page",
+         startGame: "Start Game"
+     },
     
     de: {
         // Ana sayfa
@@ -188,9 +248,39 @@ const translations = {
         sendError: "Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
         validationFullName: "Bitte geben Sie Ihren vollständigen Namen ein.",
         validationEmail: "Bitte geben Sie Ihre E-Mail-Adresse ein.",
-        validationEmailInvalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-        validationWordCard: "Bitte füllen Sie das Wortkartenfeld aus."
-    },
+                 validationEmailInvalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+         validationWordCard: "Bitte füllen Sie das Wortkartenfeld aus.",
+         
+         // How to Play Seite
+         howToPlayTitle: "Wie spielt man?",
+         teamSetup: "Team Einrichtung",
+         teamSetupDesc: "Spielen Sie mit 2-4 Teams. Jedes Team sollte mindestens 2 Spieler haben.",
+         timeLimit: "Zeitlimit",
+         timeLimitDesc: "Versuchen Sie, das Wort innerhalb der Zeitgrenze für jede Runde zu finden. Die Runde endet, wenn die Zeit abläuft.",
+         wordExplanation: "Wort Erklärung",
+         wordExplanationDesc: "Erklären Sie das Wort Ihrem Teammitglied, aber verwenden Sie keine verbotenen Wörter!",
+         passRights: "Pass Rechte",
+         passRightsDesc: "Jedes Team hat 3 Pass-Rechte. Sie können schwierige Wörter überspringen.",
+         exampleGame: "Beispiel Spiel",
+         mainWord: "Hauptwort",
+         forbiddenWords: "Verbotene Wörter",
+         goodExamples: "Gute Erklärungsbeispiele:",
+         badExamples: "Falsche Erklärungsbeispiele:",
+         scoringSystem: "Punktesystem",
+         correct: "RICHTIG",
+         pass: "PASS",
+         foul: "FOUL",
+         plusOne: "+1 Punkt",
+         zeroPoints: "0 Punkte",
+         minusOne: "-1 Punkt",
+         gameTips: "Spieltipps",
+         tip1: "Versuchen Sie zu erklären, ohne verbotene Wörter zu verwenden",
+         tip2: "Nutzen Sie die Zeit effizient, vermeiden Sie sehr lange Erklärungen",
+         tip3: "Kommunizieren Sie gut mit Ihrem Teammitglied",
+         tip4: "Verwenden Sie kreative Erklärungen",
+         homePage: "Startseite",
+         startGame: "Spiel starten"
+     },
     
     fr: {
         // Ana sayfa
@@ -252,9 +342,39 @@ const translations = {
         sendError: "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.",
         validationFullName: "Veuillez entrer votre nom complet.",
         validationEmail: "Veuillez entrer votre adresse e-mail.",
-        validationEmailInvalid: "Veuillez entrer une adresse e-mail valide.",
-        validationWordCard: "Veuillez remplir le champ de la carte de mot."
-    }
+                 validationEmailInvalid: "Veuillez entrer une adresse e-mail valide.",
+         validationWordCard: "Veuillez remplir le champ de la carte de mot.",
+         
+         // Page Comment Jouer
+         howToPlayTitle: "Comment Jouer?",
+         teamSetup: "Configuration d'Équipe",
+         teamSetupDesc: "Jouez avec 2-4 équipes. Chaque équipe doit avoir au moins 2 joueurs.",
+         timeLimit: "Limite de Temps",
+         timeLimitDesc: "Essayez de trouver le mot dans la limite de temps pour chaque tour. Le tour se termine quand le temps est écoulé.",
+         wordExplanation: "Explication du Mot",
+         wordExplanationDesc: "Expliquez le mot à votre coéquipier mais n'utilisez pas les mots interdits!",
+         passRights: "Droits de Pass",
+         passRightsDesc: "Chaque équipe a 3 droits de pass. Vous pouvez sauter les mots difficiles.",
+         exampleGame: "Exemple de Jeu",
+         mainWord: "Mot Principal",
+         forbiddenWords: "Mots Interdits",
+         goodExamples: "Exemples de Bonnes Explications:",
+         badExamples: "Exemples de Mauvaises Explications:",
+         scoringSystem: "Système de Points",
+         correct: "CORRECT",
+         pass: "PASS",
+         foul: "FAUTE",
+         plusOne: "+1 Point",
+         zeroPoints: "0 Points",
+         minusOne: "-1 Point",
+         gameTips: "Conseils de Jeu",
+         tip1: "Essayez d'expliquer sans utiliser les mots interdits",
+         tip2: "Utilisez le temps efficacement, évitez les explications très longues",
+         tip3: "Communiquez bien avec votre coéquipier",
+         tip4: "Utilisez des explications créatives",
+         homePage: "Page d'Accueil",
+         startGame: "Commencer le Jeu"
+     }
 };
 
 // Mevcut dili al
@@ -433,8 +553,96 @@ function updatePageLanguage() {
     const backBtnContact = document.querySelector('.contact-buttons .back-btn');
     if (backBtnContact) backBtnContact.textContent = translate('back');
     
-    const sendBtn = document.querySelector('.send-btn');
-    if (sendBtn) sendBtn.textContent = translate('send');
-    
-    console.log('Sayfa dili güncellendi:', currentLang);
-}
+         const sendBtn = document.querySelector('.send-btn');
+     if (sendBtn) sendBtn.textContent = translate('send');
+     
+     // How to Play sayfası
+     const howToPlayTitle = document.querySelector('.how-to-play-content h2');
+     if (howToPlayTitle) howToPlayTitle.textContent = translate('howToPlayTitle');
+     
+     const ruleCards = document.querySelectorAll('.rule-card');
+     if (ruleCards.length >= 4) {
+         // Takım Kurulumu
+         const teamSetupTitle = ruleCards[0].querySelector('h3');
+         if (teamSetupTitle) teamSetupTitle.textContent = translate('teamSetup');
+         const teamSetupDesc = ruleCards[0].querySelector('p');
+         if (teamSetupDesc) teamSetupDesc.textContent = translate('teamSetupDesc');
+         
+         // Süre Sınırı
+         const timeLimitTitle = ruleCards[1].querySelector('h3');
+         if (timeLimitTitle) timeLimitTitle.textContent = translate('timeLimit');
+         const timeLimitDesc = ruleCards[1].querySelector('p');
+         if (timeLimitDesc) timeLimitDesc.textContent = translate('timeLimitDesc');
+         
+         // Kelime Açıklama
+         const wordExplanationTitle = ruleCards[2].querySelector('h3');
+         if (wordExplanationTitle) wordExplanationTitle.textContent = translate('wordExplanation');
+         const wordExplanationDesc = ruleCards[2].querySelector('p');
+         if (wordExplanationDesc) wordExplanationDesc.textContent = translate('wordExplanationDesc');
+         
+         // Pass Hakkı
+         const passRightsTitle = ruleCards[3].querySelector('h3');
+         if (passRightsTitle) passRightsTitle.textContent = translate('passRights');
+         const passRightsDesc = ruleCards[3].querySelector('p');
+         if (passRightsDesc) passRightsDesc.textContent = translate('passRightsDesc');
+     }
+     
+     // Örnek oyun bölümü
+     const exampleGameTitle = document.querySelector('.example-section h3');
+     if (exampleGameTitle) exampleGameTitle.textContent = translate('exampleGame');
+     
+     const mainWordTitle = document.querySelector('.example-word h4');
+     if (mainWordTitle) mainWordTitle.textContent = translate('mainWord');
+     
+     const forbiddenWordsTitle = document.querySelector('.example-forbidden h4');
+     if (forbiddenWordsTitle) forbiddenWordsTitle.textContent = translate('forbiddenWords');
+     
+     const goodExamplesTitle = document.querySelector('.example-tips h4:first-of-type');
+     if (goodExamplesTitle) goodExamplesTitle.textContent = translate('goodExamples');
+     
+     const badExamplesTitle = document.querySelector('.example-tips h4:last-of-type');
+     if (badExamplesTitle) badExamplesTitle.textContent = translate('badExamples');
+     
+     // Puanlama sistemi
+     const scoringTitle = document.querySelector('.scoring-section h3');
+     if (scoringTitle) scoringTitle.textContent = translate('scoringSystem');
+     
+     const scoreCards = document.querySelectorAll('.score-card');
+     if (scoreCards.length >= 3) {
+         const correctTitle = scoreCards[0].querySelector('h4');
+         if (correctTitle) correctTitle.textContent = translate('correct');
+         const correctPoints = scoreCards[0].querySelector('p');
+         if (correctPoints) correctPoints.textContent = translate('plusOne');
+         
+         const passTitle = scoreCards[1].querySelector('h4');
+         if (passTitle) passTitle.textContent = translate('pass');
+         const passPoints = scoreCards[1].querySelector('p');
+         if (passPoints) passPoints.textContent = translate('zeroPoints');
+         
+         const foulTitle = scoreCards[2].querySelector('h4');
+         if (foulTitle) foulTitle.textContent = translate('foul');
+         const foulPoints = scoreCards[2].querySelector('p');
+         if (foulPoints) foulPoints.textContent = translate('minusOne');
+     }
+     
+     // Oyun ipuçları
+     const tipsTitle = document.querySelector('.tips-section h3');
+     if (tipsTitle) tipsTitle.textContent = translate('gameTips');
+     
+     const tipItems = document.querySelectorAll('.tip-item p');
+     if (tipItems.length >= 4) {
+         if (tipItems[0]) tipItems[0].textContent = translate('tip1');
+         if (tipItems[1]) tipItems[1].textContent = translate('tip2');
+         if (tipItems[2]) tipItems[2].textContent = translate('tip3');
+         if (tipItems[3]) tipItems[3].textContent = translate('tip4');
+     }
+     
+     // Butonlar
+     const backBtnHowToPlay = document.querySelector('.how-to-play-buttons .back-btn');
+     if (backBtnHowToPlay) backBtnHowToPlay.textContent = translate('homePage');
+     
+     const startGameBtnHowToPlay = document.querySelector('.how-to-play-buttons .play-btn');
+     if (startGameBtnHowToPlay) startGameBtnHowToPlay.textContent = translate('startGame');
+     
+     console.log('Sayfa dili güncellendi:', currentLang);
+ }
