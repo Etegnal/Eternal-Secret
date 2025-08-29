@@ -373,56 +373,15 @@ function endGame() {
     }
 }
 
-// Klavye kısayolları
+// Sadece space tuşu ile timer kontrolü (skor değiştirme kaldırıldı)
 document.addEventListener('keydown', function(event) {
-    switch(event.key) {
-        case 'ArrowUp':
-        case 'w':
-        case 'W':
-            correctAnswer();
-            break;
-        case 'ArrowDown':
-        case 's':
-        case 'S':
-            passAnswer();
-            break;
-        case 'ArrowLeft':
-        case 'a':
-        case 'A':
-        case 'ArrowRight':
-        case 'd':
-        case 'D':
-            foulAnswer();
-            break;
-                    case ' ':
-                event.preventDefault();
-                toggleTimer();
-                break;
+    if (event.key === ' ') {
+        event.preventDefault();
+        toggleTimer();
     }
 });
 
-// Mobil dokunma olayları için
-let touchStartY = 0;
-let touchEndY = 0;
-
-document.addEventListener('touchstart', function(event) {
-    touchStartY = event.touches[0].clientY;
-});
-
-document.addEventListener('touchend', function(event) {
-    touchEndY = event.changedTouches[0].clientY;
-    const diffY = touchStartY - touchEndY;
-    
-    if (Math.abs(diffY) > 50) { // Minimum kaydırma mesafesi
-        if (diffY > 0) {
-            // Yukarı kaydırma - Doğru
-            correctAnswer();
-        } else {
-            // Aşağı kaydırma - Pass
-            passAnswer();
-        }
-    }
-});
+// Mobil dokunma olayları kaldırıldı - sadece buton tıklaması ile skor değişir
 
 // Settings menüsünü aç/kapat
 function toggleSettingsMenu() {
