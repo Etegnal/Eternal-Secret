@@ -55,7 +55,6 @@
                 <img src="LOGOERENBEYAZ.png" alt="Logo" class="logo-image">
             </a>
         </div>
-        <div class="title">Eternal Secret</div>
         <button class="hamburger-btn" onclick="toggleMobileMenu()">
             <i class="fas fa-bars"></i>
         </button>
@@ -118,12 +117,16 @@
 
             <!-- Kontrol Butonları -->
             <div class="control-buttons">
-                <button class="correct-btn" onclick="correctAnswer()">DOĞRU</button>
-                <div class="pass-section">
-                    <button class="pass-btn" onclick="passAnswer()">PASS</button>
-                    <div class="pass-count" id="passCount">3/3</div>
+                <div class="top-row">
+                    <button class="correct-btn" onclick="correctAnswer()">DOĞRU</button>
+                    <button class="foul-btn" onclick="foulAnswer()">FAUL!</button>
                 </div>
-                <button class="foul-btn" onclick="foulAnswer()">FAUL!</button>
+                <div class="bottom-row">
+                    <div class="pass-section">
+                        <button class="pass-btn" onclick="passAnswer()">PASS</button>
+                        <div class="pass-count" id="passCount">3/3</div>
+                    </div>
+                </div>
             </div>
 
 

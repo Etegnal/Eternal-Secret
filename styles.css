@@ -48,14 +48,16 @@ body {
 }
 
 .mobile-header .logo {
-    width: 16px;
-    height: 16px;
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobile-header .logo-image {
-    width: 100%;
-    height: 100%;
+    
     object-fit: contain;
 }
 
@@ -63,26 +65,32 @@ body {
     color: white;
     font-family: 'Irish Grover', cursive;
     font-weight: 400;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-align: center;
     flex: 1;
     margin: 0 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .mobile-header .hamburger-btn {
-    background: none;
-    border: none;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.4);
     color: white;
     font-size: 1.2rem;
     cursor: pointer;
     padding: 0.5rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    transition: all 0.3s;
     flex-shrink: 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-header .hamburger-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Mobile Menu */
@@ -865,7 +873,7 @@ body::-webkit-scrollbar {
 .pass-count {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #000000;
+    color: #ffffff;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -2386,18 +2394,261 @@ body::-webkit-scrollbar {
         height: 38px;
         font-size: 0.85rem;
     }
+    
+    /* Additional mobile header fixes for smaller screens */
+    .mobile-header .logo {
+        width: 25px !important;
+        height: 25px !important;
+    }
+    
+    .mobile-header .title {
+        font-size: 1.1rem !important;
+    }
+    
+    .mobile-header .hamburger-btn {
+        font-size: 1.1rem !important;
+        padding: 0.4rem !important;
+    }
+    
+    /* Settings page responsive for smaller screens */
+    .settings-page {
+        padding: 0.8rem;
+    }
+    
+    .settings-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .settings-section {
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .setting-group h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .button-group {
+        gap: 0.6rem;
+        padding: 0.6rem;
+    }
+    
+    .setting-btn {
+        width: 90px;
+        height: 35px;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .settings-buttons {
+        gap: 0.8rem;
+        margin-top: 1rem;
+    }
+    
+    .back-btn, .save-btn {
+        width: 180px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    /* Team setup page responsive for smaller screens */
+    .team-setup {
+        padding: 0.8rem;
+    }
+    
+    .main-title {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .play-btn {
+        width: 160px;
+        height: 50px;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+    
+    .setup-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .settings-row {
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .team-names-section {
+        margin-bottom: 1rem;
+    }
+    
+    #teamInputs {
+        gap: 0.8rem;
+    }
+    
+    .team-input {
+        min-width: 200px;
+        max-width: 250px;
+        padding: 0.6rem;
+    }
+    
+    .team-input label {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .team-input input {
+        padding: 0.4rem;
+        font-size: 0.7rem;
+    }
+    
+    .setup-buttons {
+        margin-top: 1.5rem;
+    }
+    
+    .start-btn {
+        width: 180px;
+        height: 45px;
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    /* Game page responsive */
+    .game-screen {
+        max-width: 100%;
+        padding: 0.5rem;
+        margin-top: 0;
+        gap: 0.5rem;
+    }
+    
+    .score-panel {
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-bottom: 0.5rem;
+        min-height: auto;
+    }
+    
+    .teams-scores {
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        order: 1;
+        margin-bottom: 0.5rem;
+    }
+    
+    .team-score {
+        padding: 0.8rem 1.5rem;
+        min-width: 120px;
+        border-radius: 12px;
+    }
+    
+    .team-score h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .team-score .score {
+        font-size: 1.5rem;
+    }
+    
+    .current-team {
+        order: 2;
+        text-align: center;
+        margin-bottom: 0.3rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #FFD700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .timer-section {
+        position: static;
+        transform: none;
+        order: 3;
+        margin-bottom: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+    
+    .timer-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .timer {
+        font-size: 2.5rem;
+    }
+    
+    .word-card-stack {
+        max-width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    .word-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .main-word {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .forbidden-word {
+        font-size: 1.1rem;
+        padding: 0.4rem 0;
+    }
+    
+    .control-buttons {
+        gap: 1rem;
+        margin-top: 0.8rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .control-buttons .top-row {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+    
+    .control-buttons .bottom-row {
+        display: flex;
+        justify-content: center;
+        margin-top: 0.8rem;
+    }
+    
+    .correct-btn,
+    .pass-btn,
+    .foul-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        width: 140px;
+        height: 50px;
+    }
 }
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     /* Hide desktop header on mobile */
     .header {
-        display: none;
+        display: none !important;
     }
     
     /* Show mobile header on mobile */
     .mobile-header {
-        display: flex;
+        display: flex !important;
     }
     
     /* Adjust main content for mobile header */
@@ -2405,5 +2656,258 @@ body::-webkit-scrollbar {
         padding-top: 80px;
     }
     
-
+    /* Ensure mobile header elements are properly sized */
+    .mobile-header .logo {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    
+    .mobile-header .hamburger-btn {
+        font-size: 1.2rem !important;
+    }
+    
+    .mobile-header .title {
+        font-size: 1.2rem !important;
+        font-weight: 400 !important;
+    }
+    
+    /* Game page mobile header without title */
+    .game-page .mobile-header {
+        justify-content: space-between;
+    }
+    
+    .game-page .mobile-header .logo {
+        flex: 0 0 auto;
+    }
+    
+    .game-page .mobile-header .hamburger-btn {
+        flex: 0 0 auto;
+    }
+    
+    /* Settings page responsive */
+    .settings-page {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    
+    .settings-content h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .settings-section {
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .setting-group h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .button-group {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 0.8rem;
+    }
+    
+    .setting-btn {
+        width: 100px;
+        height: 40px;
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    .settings-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .back-btn, .save-btn {
+        width: 200px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    /* Team setup page responsive */
+    .team-setup {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    
+    .main-title {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .play-btn {
+        width: 180px;
+        height: 60px;
+        font-size: 1.2rem;
+        padding: 1.2rem 3rem;
+    }
+    
+    .setup-content h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .settings-row {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .team-count-section,
+    .round-time-section {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .team-names-section {
+        margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
+    }
+    
+    #teamInputs {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .team-input {
+        flex: none;
+        min-width: 250px;
+        max-width: 300px;
+        width: 100%;
+    }
+    
+    .setup-buttons {
+        margin-top: 2rem;
+    }
+    
+    .start-btn {
+        width: 200px;
+        height: 50px;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+    
+    /* Game page responsive for smaller screens */
+    .game-screen {
+        padding: 0.3rem;
+        gap: 0.3rem;
+    }
+    
+    .score-panel {
+        gap: 0.6rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .current-team {
+        font-size: 1.1rem;
+        order: 1;
+        text-align: center;
+        margin-bottom: 0.3rem;
+        font-weight: 700;
+        color: #FFD700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .teams-scores {
+        gap: 0.8rem;
+        order: 2;
+        margin-bottom: 0.3rem;
+    }
+    
+    .team-score {
+        padding: 0.6rem 1rem;
+        min-width: 100px;
+        border-radius: 10px;
+    }
+    
+    .team-score h3 {
+        font-size: 0.8rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .team-score .score {
+        font-size: 1.3rem;
+    }
+    
+    .timer-section {
+        margin-bottom: 0.3rem;
+        order: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        justify-content: center;
+    }
+    
+    .timer {
+        font-size: 2rem;
+    }
+    
+    .current-team {
+        font-size: 1.1rem;
+        order: 1;
+        text-align: center;
+        margin-bottom: 0.3rem;
+        font-weight: 700;
+        color: #FFD700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .word-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .main-word {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .forbidden-word {
+        font-size: 1rem;
+        padding: 0.3rem 0;
+    }
+    
+    .control-buttons {
+        gap: 0.8rem;
+        margin-top: 0.5rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .control-buttons .top-row {
+        display: flex;
+        gap: 0.8rem;
+        justify-content: center;
+    }
+    
+    .control-buttons .bottom-row {
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    
+    .correct-btn,
+    .pass-btn,
+    .foul-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        width: 120px;
+        height: 45px;
+    }
 }
